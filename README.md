@@ -129,6 +129,7 @@ AMENT_WORKSPACE=${ROOT_DIR}/ament_ws
 ROS2_ANDROID_WORKSPACE=${ROOT_DIR}/ros2_android_ws
 
 # pull and build ament
+
 mkdir -p ${AMENT_WORKSPACE}/src
 cd ${AMENT_WORKSPACE}
 wget https://raw.githubusercontent.com/esteve/ament_java/master/ament_java.repos
@@ -136,12 +137,27 @@ vcs import ${AMENT_WORKSPACE}/src < ament_java.repos
 src/ament/ament_tools/scripts/ament.py build --symlink-install --isolated
 
 # android build configuration
+# The below values can be changed to suit your needs
+# For instance ANDROID_ABI can be arm64-v8a
+# Make sure that NATIVE_API_LEVEL is above 21 for 64 bit options
+# Make sure that you change ANDROID_TOOLCHAIN_NAME to match the chosen architecture
+
 export PYTHON3_EXEC="$( which python3 )"
 export ANDROID_ABI=armeabi-v7a
 export ANDROID_NATIVE_API_LEVEL=android-21
 export ANDROID_TOOLCHAIN_NAME=arm-linux-androideabi-clang
 
+# Locate your Android SDK and insert it in the path:
+
+export ANDROID_HOME=/FULL/PATH/TO/SDK
+
+# Do the same with the NDK. If you installed via Android Studio then the NDK is in
+# $ANDROID_HOME/ndk-build . Please verify this
+
+export ANDROID_NDK=/FULL/PATH/TO/NDK
+
 # pull and build ros2 for android
+
 mkdir -p ${ROS2_ANDROID_WORKSPACE}/src
 cd ${ROS2_ANDROID_WORKSPACE}
 wget https://raw.githubusercontent.com/esteve/ros2_java/master/ros2_java_android.repos
@@ -154,7 +170,7 @@ ament build --isolated --skip-packages test_msgs \
   -DANDROID_FUNCTION_LEVEL_LINKING=OFF \
   -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL} \
   -DANDROID_TOOLCHAIN_NAME=${ANDROID_TOOLCHAIN_NAME} \
-  -DANDROID_STL=gnustl_shared \
+  -DANDROID_STL=c++_shared \
   -DANDROID_ABI=${ANDROID_ABI} \
   -DANDROID_NDK=${ANDROID_NDK} \
   -DTHIRDPARTY=ON \
@@ -163,7 +179,7 @@ ament build --isolated --skip-packages test_msgs \
   -- \
   --parallel \
   --ament-gradle-args \
-  -Pament.android_stl=gnustl_shared -Pament.android_abi=$ANDROID_ABI -Pament.android_ndk=$ANDROID_NDK --
+  -Pament.android_stl=c++_shared -Pament.android_abi=$ANDROID_ABI -Pament.android_ndk=$ANDROID_NDK --
 ```
 
 You can find more information about the Android examples at https://github.com/esteve/ros2_android_examples
