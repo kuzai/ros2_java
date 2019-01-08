@@ -57,7 +57,7 @@ Sounds great, how can I try this out?
 Download the ament repositories in a separate workspace:
 
 ```
-mkdir ament_ws/src
+mkdir -p ament_ws/src
 cd ament_ws
 curl -skL https://raw.githubusercontent.com/esteve/ament_java/master/ament_java.repos -o ament_java.repos
 vcs import src < ament_java.repos
@@ -124,7 +124,7 @@ Although the `ros2_java_android.repos` file contains all the repositories for th
 
 ```
 # define paths
-ROOT_DIR = ${HOME}
+ROOT_DIR=${HOME}
 AMENT_WORKSPACE=${ROOT_DIR}/ament_ws
 ROS2_ANDROID_WORKSPACE=${ROOT_DIR}/ros2_android_ws
 
