@@ -160,7 +160,7 @@ export ANDROID_NDK=/FULL/PATH/TO/NDK
 
 mkdir -p ${ROS2_ANDROID_WORKSPACE}/src
 cd ${ROS2_ANDROID_WORKSPACE}
-wget https://raw.githubusercontent.com/esteve/ros2_java/master/ros2_java_android.repos
+wget https://gitlab.is4s-auburn.com/cerdec/ros2_java/raw/master/ros2_java_android.repos
 vcs import ${ROS2_ANDROID_WORKSPACE}/src < ros2_java_android.repos
 source ${AMENT_WORKSPACE}/install_isolated/local_setup.sh
 ament build --isolated --skip-packages test_msgs \
