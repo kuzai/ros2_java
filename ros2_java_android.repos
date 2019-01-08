@@ -38,7 +38,7 @@ repositories:
   ros2/rcl_interfaces:
     type: git
     url: https://github.com/ros2/rcl_interfaces.git
-    version: master
+    version: b031fc4819c621554d5874e41d22c712033b99f9
   ros2/rmw:
     type: git
     url: https://github.com/ros2/rmw.git
@@ -69,13 +69,13 @@ repositories:
     version: 0.5.0
   ros2_java/ros2_java:
     type: git
-    url: https://github.com/esteve/ros2_java.git
+    url: https://github.com/kuzai/ros2_java.git
     version: master
   ros2_java/ros2_android:
     type: git
-    url: https://github.com/esteve/ros2_android.git
+    url: https://github.com/kuzai/ros2_android.git
     version: master
   ros2_java/ros2_android_examples:
     type: git
-    url: https://github.com/esteve/ros2_android_examples.git
+    url: https://github.com/kuzai/ros2_android_examples.git
     version: master
