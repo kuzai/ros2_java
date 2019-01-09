@@ -158,6 +158,12 @@ export ANDROID_NDK=/FULL/PATH/TO/NDK
 
 # pull and build ros2 for android
 
+# After running the build for the first time, you most likely will have issues
+# with ASIO / Fast-RTPS. To fix this, replace 
+# ros2_android_ws/src/eProsima/Fast-RTPS/thirdparty/asio/asio/include/asio/detail/config.hpp
+# with the config.hpp file in this repository
+# This can only be done after running the source command below for the first time
+
 mkdir -p ${ROS2_ANDROID_WORKSPACE}/src
 cd ${ROS2_ANDROID_WORKSPACE}
 wget https://raw.githubusercontent.com/kuzai/ros2_java/master/ros2_java_android.repos
