@@ -188,4 +188,16 @@ ament build --isolated --skip-packages test_msgs \
   -Pament.android_stl=c++_shared -Pament.android_abi=$ANDROID_ABI -Pament.android_ndk=$ANDROID_NDK --
 ```
 
+Android Dev Environment
+------------------------
+
+In this repo there is an app_files folder containing some example files for how to set up an independent workspace using ros2_java.
+
+Create a new project in Android Studio with CPP support. After doing this, copy or modify the existing files in your project with the corresponding ones in the app_files folder. the root of the app_files folder contains files that go in the root directory of your project and so on.
+
+Make sure to go over each file to keep it in line with the location of your ros2_java files as well as your android project!
+
+
 You can find more information about the Android examples at https://github.com/esteve/ros2_android_examples
+
+You can find the original project at https://github.com/esteve/ros2_java
