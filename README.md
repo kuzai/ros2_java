@@ -162,7 +162,7 @@ export ANDROID_NDK=/FULL/PATH/TO/NDK
 # with ASIO / Fast-RTPS. To fix this, replace 
 # ros2_android_ws/src/eProsima/Fast-RTPS/thirdparty/asio/asio/include/asio/detail/config.hpp
 # with the config.hpp file in this repository
-# This can only be done after running the source command below for the first time
+# This can only be done after running the vcs import command below for the first time
 
 mkdir -p ${ROS2_ANDROID_WORKSPACE}/src
 cd ${ROS2_ANDROID_WORKSPACE}
