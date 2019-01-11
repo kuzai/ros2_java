@@ -169,7 +169,7 @@ cd ${ROS2_ANDROID_WORKSPACE}
 wget https://raw.githubusercontent.com/kuzai/ros2_java/master/ros2_java_android.repos
 vcs import ${ROS2_ANDROID_WORKSPACE}/src < ros2_java_android.repos
 source ${AMENT_WORKSPACE}/install_isolated/local_setup.sh
-ament build --isolated --skip-packages test_msgs \
+ament build --isolated --skip-packages test_msgs ros2_project \
   --cmake-args \
   -DPYTHON_EXECUTABLE=${PYTHON3_EXEC} \
   -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK/build/cmake/android.toolchain.cmake \
