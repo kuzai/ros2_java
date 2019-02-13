@@ -164,6 +164,9 @@ export ANDROID_NDK=/FULL/PATH/TO/NDK
 # with the config.hpp file in this repository
 # This can only be done after running the ament build command at least once
 
+# If you want to build any other libraries, you can add them in ./src/ros2/ directory as long as
+# They are ament compatible packages.
+
 mkdir -p ${ROS2_ANDROID_WORKSPACE}/src
 cd ${ROS2_ANDROID_WORKSPACE}
 wget https://raw.githubusercontent.com/kuzai/ros2_java/master/ros2_java_android.repos
