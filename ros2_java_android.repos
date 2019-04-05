@@ -73,13 +73,9 @@ repositories:
     version: 0.5.0
   ros2_java/ros2_java:
     type: git
-    url: https://github.com/kuzai/ros2_java.git
+    url: https://github.com/ros2java-alfred/ros2_java.git
     version: master
   ros2_java/ros2_android:
     type: git
-    url: https://github.com/kuzai/ros2_android.git
-    version: master
-  ros2_java/ros2_android_examples:
-    type: git
-    url: https://github.com/kuzai/ros2_android_examples.git
+    url: https://github.com/ros2java-alfred/ros2_android.git
     version: master
